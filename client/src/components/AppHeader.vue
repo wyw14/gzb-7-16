@@ -23,6 +23,10 @@
           <el-icon><Calendar /></el-icon>
           <span>练琴打卡</span>
         </router-link>
+        <router-link to="/borrow-calendar" class="nav-item" :class="{ active: $route.name === 'BorrowCalendar' }">
+          <el-icon><Date /></el-icon>
+          <span>借用日历</span>
+        </router-link>
       </nav>
       
       <div class="header-right">
@@ -52,6 +56,9 @@
                 </el-dropdown-item>
                 <el-dropdown-item command="messages">
                   <el-icon><Message /></el-icon>消息中心
+                </el-dropdown-item>
+                <el-dropdown-item command="borrow-calendar">
+                  <el-icon><Date /></el-icon>借用日历
                 </el-dropdown-item>
                 <el-dropdown-item divided command="logout">
                   <el-icon><SwitchButton /></el-icon>退出登录
@@ -98,6 +105,9 @@ const handleCommand = (cmd) => {
       break
     case 'messages':
       router.push('/messages')
+      break
+    case 'borrow-calendar':
+      router.push('/borrow-calendar')
       break
     case 'logout':
       ElMessageBox.confirm('确定要退出登录吗？', '提示', {

@@ -45,6 +45,12 @@ const routes = [
     meta: { title: '练琴打卡', requiresAuth: true }
   },
   {
+    path: '/borrow-calendar',
+    name: 'BorrowCalendar',
+    component: () => import('../views/BorrowCalendar.vue'),
+    meta: { title: '借用日历', requiresAuth: true }
+  },
+  {
     path: '/messages',
     name: 'Messages',
     component: () => import('../views/Messages.vue'),
